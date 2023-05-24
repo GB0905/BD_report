@@ -84,6 +84,7 @@ JVM 개발자들은 효율적인 메모리 관리를 위해, 객체의 생존 �
 - 모든 객체는 처음에는 Young Generation에 생성되게 된다.
 - Young Generation의 공간은 Old Generation에 비해 상대적으로 작기 때문에 메모리 상의 객체를 찾아 제거하는데 적은 시간이 걸린다. (작은 공간에서 데이터를 찾아서)
 - 이 때문에 Young Generation 영역에서 발생되는 GC를 Minor GC라 불린다.
+
     1. 처음 생성된 객체는 Young Generation 영역의 일부인 Eden 영역에 위치
     2. 객체가 계속 생성되어 Eden 영역이 꽉차게 되고 Minor GC가 실행
     3. Mark 동작을 통해 reachable 객체를 탐색
@@ -91,14 +92,15 @@ JVM 개발자들은 효율적인 메모리 관리를 위해, 객체의 생존 �
     5. Eden 영역에서 사용되지 않는 객체(unreachable)의 메모리를 해제(sweep)
     6. 살아남은 모든 객체들은 age값이 1씩 증가
     7. 또다시 Eden 영역에 신규 객체들로 가득 차게 되면 다시한번 minor GC 발생하고 mark 한다
-    8. marking 한 객체들을 비어있는 Survival 1으로 이동하고 sweep
+    8. marking 한 객체들을 비어있는 Survival 1으로 이동하고 sweep</br>
     10. 다시 살아남은 모든 객체들은 age가 1씩 증가
     11. 이러한 과정을 반복
 
 #### Major GC (Full GC) 과정
 - Old Generation은 길게 살아남는 메모리들이 존재하는 공간이다.
 - Old Generation의 객체들은 거슬러 올라가면 처음에는 Young Generation에 의해 시작되었으나, GC 과정 중에 제거되지 않은 경우 age 임계값이 차게되어 이동된 녀석들이다.
-- Major GC는 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 발생하게 된다.
+- Major GC는 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 발생하게 된다.</br>
+
     1. 객체의 age가 임계값(여기선 8로 설정)에 도달하게 되면,
     2. 이 객체들은 Old Generation 으로 이동된다. 이를 promotion 이라 부른다.
     3. 위의 과정이 반복되어 Old Generation 영역의 공간(메모리)가 부족하게 되면 Major GC가 발생되게 된다.</br>
