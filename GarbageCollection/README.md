@@ -23,8 +23,8 @@
 ### 가비지 컬렉션 대상
 - 가비지 컬렉션은 특정 객체가 garbage인지 아닌지 판단하기 위해서 도달성, 도달능력(Reachability) 이라는 개념을 적용한다.
 - 객체에 레퍼런스가 있다면 Reachable로 구분되고, 객체에 유효한 레퍼런스가 없다면 Unreachable로 구분해버리고 수거한다. 
-    1. Reachable : 객체가 참조되고 있는 상태
-    2. Unreachable  : 객체가 참조되고 있지 않은 상태 (GC의 대상) 
+    - Reachable : 객체가 참조되고 있는 상태
+    - Unreachable  : 객체가 참조되고 있지 않은 상태 (GC의 대상) 
 
 ### 가비지 컬렉션 청소 방식
 **STW(Stop The World)**
