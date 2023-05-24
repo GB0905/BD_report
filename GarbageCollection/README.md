@@ -92,9 +92,9 @@ JVM 개발자들은 효율적인 메모리 관리를 위해, 객체의 생존 �
     5. Eden 영역에서 사용되지 않는 객체(unreachable)의 메모리를 해제(sweep)
     6. 살아남은 모든 객체들은 age값이 1씩 증가
     7. 또다시 Eden 영역에 신규 객체들로 가득 차게 되면 다시한번 minor GC 발생하고 mark 한다
-    8. marking 한 객체들을 비어있는 Survival 1으로 이동하고 sweep</br>
-    10. 다시 살아남은 모든 객체들은 age가 1씩 증가
-    11. 이러한 과정을 반복
+    8. marking 한 객체들을 비어있는 Survival 1으로 이동하고 sweep<
+    9. 다시 살아남은 모든 객체들은 age가 1씩 증가
+    10. 이러한 과정을 반복
 
 #### Major GC (Full GC) 과정
 - Old Generation은 길게 살아남는 메모리들이 존재하는 공간이다.
